@@ -90,9 +90,30 @@ async function run() {
       } ) 
 
 
+    // email wise
+      app.put('/updated/:email' , async(req,res)=> {
+        const info = req.body ;
+        console.log(info);
+        const email = req.params.email ;
+        console.log(email);
+        const filter = {email : email}
+        console.log(filter)
+        const options = { upsert: true};
+        console.log(options);
+        const updateDoc = {
+         $set: {
+           email : info.email,
+           name: info.name,
+           location : info.location,
+           education: info.education
+         }
+       };
+       const result = await collection.updateOne(filter,updateDoc, options)
+       res.send(result)
+    })
 
 
-
+    
 
 
 
