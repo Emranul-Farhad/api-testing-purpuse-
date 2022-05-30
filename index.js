@@ -50,7 +50,7 @@ async function run() {
     } )
 
 
-    // update method
+    // update method id wide
      app.put("/update/:id", async(req,res)=> {
         //  const get = req.body ;
          const id = req.params.id
@@ -71,84 +71,18 @@ async function run() {
   
 
 
-      //  app.put('/put', async(req,res)=> {
-      //      const email = req.query.email ;
-      //      console.log(email);
-      //      const  filter = {email : email}
-      //      const options = { upsert: true };
-      //      const updateDoc = {
-      //       $set: {
-      //         name : req.body.name ,
-      //         location : req.body.location,
-      //         education : req.body.education
-      //       },
-      //     };
-      //     const testing  = await collection.updateOne( filter,updateDoc, options)
-      //     res.send(testing)
-               
-           
-      //  } )
+     
 
 
 
-    app.put('/updated/:email' , async(req,res)=> {
-        const info = req.body ;
-        console.log(info);
-        const email = req.params.email ;
-        console.log(email);
-        const filter = {email : email}
-        console.log(filter)
-        const options = { upsert: true};
-        console.log(options);
-        const updateDoc = {
-         $set: {
-           email : info.email,
-           name: info.name,
-           location : info.location,
-           education: info.education
-         }
-       };
-       const result = await collection.updateOne(filter,updateDoc, options)
-       res.send(result)
-    })
 
 
 
-    //    app.put('/users/:email', async (req, res) => {
-    //     const email = req.params.email;
     
-    //     const info = req.body;
-    //     const filter = { email: email }
-    //     const options = { upsert: true};
-    //     const updateDoc = {
-    //         $set: info
-    //     };
-    //     const updateuser = await usercollection.updateOne(filter, updateDoc, options)
-    //     const token = jwt.sign({ email: email }, process.env.JWT_KEY, { expiresIn: '30d' });
-    //     res.send({ updateuser, token })
-    // })
 
 
 
-
-        // get update profile info
-        // app.get('/profile', async(req,res)=> {
-        //     const email = req.query.email ;
-        //     console.log(email);
-        //     const query = {email: email}
-        //     console.log(query);
-        //     const updateprofile = await profiles.findOne(query)
-        //     res.send(updateprofile)
-
-        // } )
-       
-        //  //  profile update
-        //  app.post('/profile' , async(req,res)=> {
-        //     const profile = req.body ;
-        //     const profileinfo = await profiles.insertOne(profile)
-        //     res.send(profileinfo)
-        // } )
-
+        
         
 
 
