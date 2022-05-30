@@ -71,7 +71,25 @@ async function run() {
   
 
 
-     
+      //  user email wise collection update
+      app.put('/user/:email' , async(req,res)=> {
+        const email = req.params.email ;
+        const info = req.body ;
+        const filter = {email : email}
+        const options = { upsert: true };
+        const updateDoc = {
+          $set: {
+            email : info.email,
+              name : info.name ,
+              location : tnfo.location,
+              education : info.education
+           },
+        };
+        const results  = await collection.updateOne(filter, updateDoc, options )
+        res.send(results)
+      } ) 
+
+
 
 
 
